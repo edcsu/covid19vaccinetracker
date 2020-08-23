@@ -5,6 +5,7 @@
         'white--text',
         'd-flex',
         'justify-space-between',
+        'font-weight-bold',
         {
           'flex-column': $vuetify.breakpoint.xs
         }

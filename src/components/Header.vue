@@ -1,8 +1,8 @@
 <template>
   <v-app-bar app clipped-left color="primary" dark>
     <!-- <v-app-bar-nav-icon @click="$emit('hidesidemenu')"></v-app-bar-nav-icon> -->
-    <v-icon class="svg-icon" v-text="'$vuetify.icons.virus'"></v-icon>
-    <div class="ml-1 d-flex align-center">
+    <v-icon class="svg-icon" v-text="'$vuetify.icons.corona'"></v-icon>
+    <div class="ml-1 d-flex align-center font-weight-bold">
       COVID19 APP VACCINE TRACKER
     </div>
 
