@@ -6,6 +6,7 @@ import TwitterComponent from '../Icons/TwitterComponent'
 import LinkedinComponent from '../Icons/LinkedinComponent'
 import CoronaVirusComponent from '../Icons/CoronaVirusComponent'
 import '@mdi/font/css/materialdesignicons.css'
+import colors from 'vuetify/lib/util/colors'
 
 Vue.use(Vuetify)
 
@@ -34,6 +35,9 @@ export default new Vuetify({
     themes: {
       light: {
         primary: '#00ADBC'
+      },
+      dark: {
+        primary: colors.grey.darken4
       }
     }
   }

@@ -58,6 +58,22 @@
         <v-icon class="">mdi-hand-pointing-up</v-icon>
       </span>
     </v-tooltip>
+
+    <!-- <v-tooltip bottom>
+      <template v-slot:activator="{ on }">
+        <v-switch
+        v-model="$vuetify.theme.dark"
+        hide-details
+        inset
+        v-on="on"
+        color="info"
+        ></v-switch>
+      </template>
+      <span>
+        Choose between light and dark
+        <v-icon class="">mdi-hand-pointing-up</v-icon>
+      </span>
+    </v-tooltip> -->
   </v-app-bar>
 </template>
 <script>
