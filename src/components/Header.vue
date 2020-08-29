@@ -67,6 +67,8 @@
         inset
         v-on="on"
         color="info"
+        class="ml-5"
+        label="Theme"
         ></v-switch>
       </template>
       <span>

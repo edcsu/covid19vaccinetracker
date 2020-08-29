@@ -13,7 +13,6 @@
         ></v-text-field>
       </v-card-title>
       <v-data-table
-        dense
         :headers="headers"
         :items="desserts"
         :search="search"
