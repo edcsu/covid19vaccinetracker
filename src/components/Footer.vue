@@ -2,6 +2,7 @@
   <v-footer app class="primary">
     <v-card-text
       :class="[
+        'pa-0',
         'white--text',
         'd-flex',
         'justify-space-between',
@@ -12,42 +13,19 @@
       ]"
     >
       <span class>
-        <strong>#STAYHOME</strong>
-      </span>
-      <span class>
         <strong>#WEARMASKINPUBLIC</strong>
       </span>
       <span>
         Visit
         <a
-          href="https://www.who.int/emergencies/diseases/novel-coronavirus-2019"
+          href="https://covid19globalstatviewer.web.app"
           target="_blank"
           rel="noopener noreferrer"
           class="white--text"
         >
-          WHO
+          Global COVID19 stat app
         </a>
-        and
-        <a
-          href="https://coronavirus.jhu.edu/map.html"
-          target="_blank"
-          rel="noopener noreferrer"
-          class="white--text"
-        >
-          John hopkins University
-        </a>
-        for more info.
-      </span>
-      <span>
-        Data from
-        <a
-          href="https://disease.sh/docs"
-          target="_blank"
-          rel="noopener noreferrer"
-          class="white--text"
-        >
-          NOVELCoVID19 API
-        </a>
+        for latest info.
       </span>
     </v-card-text>
   </v-footer>

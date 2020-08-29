@@ -2,7 +2,7 @@
   <v-app>
     <Header />
     <v-main>
-      <!-- <HelloWorld/> -->
+      <router-view></router-view>
     </v-main>
     <Footer />
   </v-app>
