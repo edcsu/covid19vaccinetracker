@@ -1,6 +1,6 @@
 <template>
   <v-container fluid>
-    <v-card>
+    <v-card elevation="5">
       <v-card-title>
           Table of COVID19 Vaccine nominees
         <v-spacer></v-spacer>
@@ -16,7 +16,7 @@
         :headers="headers"
         :items="desserts"
         :search="search"
-        items-per-page=5
+        items-per-page="5"
       ></v-data-table>
     </v-card>
   </v-container>

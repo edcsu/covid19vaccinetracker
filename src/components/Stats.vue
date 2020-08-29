@@ -9,7 +9,7 @@
                 Total nominees
               </v-list-item-title>
               <v-list-item-subtitle class="display-1 font-weight-black">
-                44
+                {{ totalNominees }}
               </v-list-item-subtitle>
             </v-list-item-content>
 
@@ -20,70 +20,90 @@
         </v-card>
       </v-col>
       <v-col cols="12" sm="6" md="3" lg="3" xl="3">
-        <v-card outlined class="cyan lighten-4">
+        <v-card outlined class="success">
           <v-list-item two-line="">
             <v-list-item-content>
               <v-list-item-title class="">
-                Pre-clinical
+                {{ phase3[0].phase }}
               </v-list-item-title>
               <v-list-item-subtitle class="display-1 font-weight-black">
-                17
+                {{ phase3[0].candidates }}
               </v-list-item-subtitle>
             </v-list-item-content>
 
             <v-list-item-avatar tile>
-              <v-icon size="32px">mdi-account-plus</v-icon>
+              <v-icon class="" size="32px">mdi-account-multiple-check</v-icon>
+            </v-list-item-avatar>
+          </v-list-item>
+        </v-card>
+
+      </v-col>
+      <v-col cols="12" sm="6" md="3" lg="3" xl="3">
+        <v-card outlined class="amber">
+          <v-list-item two-line="">
+            <v-list-item-content>
+              <v-list-item-title class="">
+                {{ phase23[0].phase }}
+              </v-list-item-title>
+              <v-list-item-subtitle class="display-1 font-weight-black">
+                {{ phase23[0].candidates }}
+              </v-list-item-subtitle>
+            </v-list-item-content>
+
+            <v-list-item-avatar tile>
+              <v-icon class="" size="32px">mdi-doctor</v-icon>
             </v-list-item-avatar>
           </v-list-item>
         </v-card>
       </v-col>
       <v-col cols="12" sm="6" md="3" lg="3" xl="3">
-        <v-card outlined class="red lighten-1">
+        <v-card outlined class="success">
           <v-list-item two-line="">
             <v-list-item-content>
               <v-list-item-title class="">
-                Early research
+                {{ phase2b[0].phase }}
               </v-list-item-title>
               <v-list-item-subtitle class="display-1 font-weight-black">
-                1
+                {{ phase2b[0].candidates }}
               </v-list-item-subtitle>
             </v-list-item-content>
 
             <v-list-item-avatar tile>
-              <v-icon size="32px">mdi-account-multiple-minus</v-icon>
+              <v-icon class="" size="32px">mdi-account-multiple-check</v-icon>
             </v-list-item-avatar>
           </v-list-item>
         </v-card>
-      </v-col>
-      <v-col cols="12" sm="6" md="3" lg="3" xl="3">
-        <v-card outlined class="red lighten-1">
-          <v-list-item two-line="">
-            <v-list-item-content>
-              <v-list-item-title class="">
-                Phase 1
-              </v-list-item-title>
-              <v-list-item-subtitle class="display-1 font-weight-black">
-                8
-              </v-list-item-subtitle>
-            </v-list-item-content>
 
-            <v-list-item-avatar tile>
-              <v-icon size="32px">mdi-account-multiple-remove</v-icon>
-            </v-list-item-avatar>
-          </v-list-item>
-        </v-card>
       </v-col>
     </v-row>
     <v-row class="mt-n4">
-      <v-col cols="12" sm="6" md="6" lg="2" xl="3">
+      <v-col cols="12" sm="6" md="4" lg="2" xl="2">
+        <v-card outlined class="amber">
+          <v-list-item two-line="">
+            <v-list-item-content>
+              <v-list-item-title class="">
+                {{ phase2[0].phase }}
+              </v-list-item-title>
+              <v-list-item-subtitle class="display-1 font-weight-black">
+                {{ phase2[0].candidates }}
+              </v-list-item-subtitle>
+            </v-list-item-content>
+
+            <v-list-item-avatar tile>
+              <v-icon class="" size="32px">mdi-doctor</v-icon>
+            </v-list-item-avatar>
+          </v-list-item>
+        </v-card>
+      </v-col>
+      <v-col cols="12" sm="6" md="4" lg="2" xl="2">
         <v-card outlined class="orange lighten-2">
           <v-list-item two-line="">
             <v-list-item-content>
               <v-list-item-title class="">
-                Phase 1/2
+                {{ phase12[0].phase }}
               </v-list-item-title>
               <v-list-item-subtitle class="display-1 font-weight-black">
-                7
+                {{ phase12[0].candidates }}
               </v-list-item-subtitle>
             </v-list-item-content>
 
@@ -93,74 +113,56 @@
           </v-list-item>
         </v-card>
       </v-col>
+      <v-col cols="12" sm="6" md="4" lg="2" xl="2">
+        <v-card outlined class="red lighten-1">
+          <v-list-item two-line="">
+            <v-list-item-content>
+              <v-list-item-title class="">
+                {{ phase1[0].phase }}
+              </v-list-item-title>
+              <v-list-item-subtitle class="display-1 font-weight-black">
+                {{ phase1[0].candidates }}
+              </v-list-item-subtitle>
+            </v-list-item-content>
+
+            <v-list-item-avatar tile>
+              <v-icon size="32px">mdi-account-multiple-remove</v-icon>
+            </v-list-item-avatar>
+          </v-list-item>
+        </v-card>
+      </v-col>
       <v-col cols="12" sm="6" md="6" lg="3" xl="3">
-        <v-card outlined class="amber">
+        <v-card outlined class="red lighten-1">
           <v-list-item two-line="">
             <v-list-item-content>
               <v-list-item-title class="">
-                Phase 2
+                {{ phaseEarly[0].phase }}
               </v-list-item-title>
               <v-list-item-subtitle class="display-1 font-weight-black">
-                3
+                {{ phaseEarly[0].candidates }}
               </v-list-item-subtitle>
             </v-list-item-content>
 
             <v-list-item-avatar tile>
-              <v-icon class="" size="32px">mdi-doctor</v-icon>
+              <v-icon size="32px">mdi-account-multiple-minus</v-icon>
             </v-list-item-avatar>
           </v-list-item>
         </v-card>
       </v-col>
-      <v-col cols="12" sm="6" md="4" lg="2" xl="3">
-        <v-card outlined class="success">
-          <v-list-item two-line="">
+      <v-col cols="12" sm="12" md="6" lg="3" xl="3">
+        <v-card outlined class="cyan lighten-4">
+        <v-list-item two-line="">
             <v-list-item-content>
               <v-list-item-title class="">
-                Phase 2b
+                {{ phasePre[0].phase }}
               </v-list-item-title>
               <v-list-item-subtitle class="display-1 font-weight-black">
-                1
+                {{ phasePre[0].candidates }}
               </v-list-item-subtitle>
             </v-list-item-content>
 
             <v-list-item-avatar tile>
-              <v-icon class="" size="32px">mdi-account-multiple-check</v-icon>
-            </v-list-item-avatar>
-          </v-list-item>
-        </v-card>
-      </v-col>
-      <v-col cols="12" sm="6" md="4" lg="2" xl="3">
-        <v-card outlined class="amber">
-          <v-list-item two-line="">
-            <v-list-item-content>
-              <v-list-item-title class="">
-                Phase 2/3
-              </v-list-item-title>
-              <v-list-item-subtitle class="display-1 font-weight-black">
-                3
-              </v-list-item-subtitle>
-            </v-list-item-content>
-
-            <v-list-item-avatar tile>
-              <v-icon class="" size="32px">mdi-doctor</v-icon>
-            </v-list-item-avatar>
-          </v-list-item>
-        </v-card>
-      </v-col>
-      <v-col cols="12" sm="12" md="4" lg="3" xl="3">
-        <v-card outlined class="success">
-          <v-list-item two-line="">
-            <v-list-item-content>
-              <v-list-item-title class="">
-                Phase 3
-              </v-list-item-title>
-              <v-list-item-subtitle class="display-1 font-weight-black">
-                4
-              </v-list-item-subtitle>
-            </v-list-item-content>
-
-            <v-list-item-avatar tile>
-              <v-icon class="" size="32px">mdi-account-multiple-check</v-icon>
+              <v-icon size="32px">mdi-account-plus</v-icon>
             </v-list-item-avatar>
           </v-list-item>
         </v-card>
@@ -172,13 +174,37 @@
 <script>
 export default {
   name: 'Stats',
-  props: ['summaryDetails'],
+  props: ['totalCandidates', 'totalPhases'],
   data: () => ({
     right: null
   }),
   computed: {
-    stats: function () {
-      return this.summaryDetails
+    totalNominees: function () {
+      return this.totalCandidates
+    },
+    phase3: function () {
+      return this.totalPhases.filter(e => e.phase === 'Phase 3')
+    },
+    phase23: function () {
+      return this.totalPhases.filter(e => e.phase === 'Phase 2/3')
+    },
+    phase2b: function () {
+      return this.totalPhases.filter(e => e.phase === 'Phase 2b')
+    },
+    phase2: function () {
+      return this.totalPhases.filter(e => e.phase === 'Phase 2')
+    },
+    phase12: function () {
+      return this.totalPhases.filter(e => e.phase === 'Phase 1/2')
+    },
+    phase1: function () {
+      return this.totalPhases.filter(e => e.phase === 'Phase 1')
+    },
+    phasePre: function () {
+      return this.totalPhases.filter(e => e.phase === 'Pre-clinical')
+    },
+    phaseEarly: function () {
+      return this.totalPhases.filter(e => e.phase === 'Early research')
     }
   }
 }
