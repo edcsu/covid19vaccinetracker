@@ -2,7 +2,7 @@
   <v-container fluid>
     <v-row>
       <v-col cols="12" sm="6" md="3" lg="3" xl="3" class="">
-        <v-card outlined class="blue lighten-2">
+        <v-card outlined class="info">
           <v-list-item two-line="">
             <v-list-item-content>
               <v-list-item-title class="">
@@ -20,7 +20,7 @@
         </v-card>
       </v-col>
       <v-col cols="12" sm="6" md="3" lg="3" xl="3">
-        <v-card outlined class="success">
+        <v-card outlined class="deep-purple darken-1">
           <v-list-item two-line="">
             <v-list-item-content>
               <v-list-item-title class="">
@@ -39,7 +39,7 @@
 
       </v-col>
       <v-col cols="12" sm="6" md="3" lg="3" xl="3">
-        <v-card outlined class="amber">
+        <v-card outlined class="light-blue darken-4">
           <v-list-item two-line="">
             <v-list-item-content>
               <v-list-item-title class="">
@@ -57,7 +57,7 @@
         </v-card>
       </v-col>
       <v-col cols="12" sm="6" md="3" lg="3" xl="3">
-        <v-card outlined class="success">
+        <v-card outlined class="light-green darken-4">
           <v-list-item two-line="">
             <v-list-item-content>
               <v-list-item-title class="">
@@ -78,7 +78,7 @@
     </v-row>
     <v-row class="mt-n4">
       <v-col cols="12" sm="6" md="4" lg="2" xl="2">
-        <v-card outlined class="amber">
+        <v-card outlined class="success">
           <v-list-item two-line="">
             <v-list-item-content>
               <v-list-item-title class="">
@@ -96,7 +96,7 @@
         </v-card>
       </v-col>
       <v-col cols="12" sm="6" md="4" lg="2" xl="2">
-        <v-card outlined class="orange lighten-2">
+        <v-card outlined class="lime darken-2">
           <v-list-item two-line="">
             <v-list-item-content>
               <v-list-item-title class="">
@@ -114,7 +114,7 @@
         </v-card>
       </v-col>
       <v-col cols="12" sm="6" md="4" lg="2" xl="2">
-        <v-card outlined class="red lighten-1">
+        <v-card outlined class="amber">
           <v-list-item two-line="">
             <v-list-item-content>
               <v-list-item-title class="">
@@ -132,7 +132,7 @@
         </v-card>
       </v-col>
       <v-col cols="12" sm="6" md="6" lg="3" xl="3">
-        <v-card outlined class="red lighten-1">
+        <v-card outlined class="yellow darken-3">
           <v-list-item two-line="">
             <v-list-item-content>
               <v-list-item-title class="">
@@ -150,7 +150,7 @@
         </v-card>
       </v-col>
       <v-col cols="12" sm="12" md="6" lg="3" xl="3">
-        <v-card outlined class="cyan lighten-4">
+        <v-card outlined class="orange">
         <v-list-item two-line="">
             <v-list-item-content>
               <v-list-item-title class="">
