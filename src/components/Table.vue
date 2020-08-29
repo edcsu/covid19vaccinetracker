@@ -44,9 +44,10 @@ export default {
           filterable: true,
           value: 'candidate'
         },
-        { text: 'Phase', value: 'trialPhase' },
-        { text: 'Sponsors', value: 'sponsors' },
-        { text: 'Institutions', value: 'institutions' }
+        { text: 'Phase', filterable: true, value: 'trialPhase' },
+        { text: 'Sponsors', filterable: true, value: 'sponsors' },
+        { text: 'Institutions', filterable: true, value: 'institutions' },
+        { text: 'Funding', filterable: true, value: 'funding' }
       ]
     }
   }
