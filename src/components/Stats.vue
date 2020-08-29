@@ -14,7 +14,7 @@
             </v-list-item-content>
 
             <v-list-item-avatar tile>
-              <v-icon class="" size="32px">mdi-account-circle</v-icon>
+              <v-icon class="" size="48px">mdi-needle</v-icon>
             </v-list-item-avatar>
           </v-list-item>
         </v-card>
@@ -32,11 +32,10 @@
             </v-list-item-content>
 
             <v-list-item-avatar tile>
-              <v-icon class="" size="32px">mdi-account-multiple-check</v-icon>
+              <v-icon class="" size="48px">mdi-account-group</v-icon>
             </v-list-item-avatar>
           </v-list-item>
         </v-card>
-
       </v-col>
       <v-col cols="12" sm="6" md="3" lg="3" xl="3">
         <v-card outlined class="light-blue darken-4">
@@ -51,7 +50,7 @@
             </v-list-item-content>
 
             <v-list-item-avatar tile>
-              <v-icon class="" size="32px">mdi-doctor</v-icon>
+              <v-icon class="" size="48px">mdi-account-multiple-check</v-icon>
             </v-list-item-avatar>
           </v-list-item>
         </v-card>
@@ -69,7 +68,7 @@
             </v-list-item-content>
 
             <v-list-item-avatar tile>
-              <v-icon class="" size="32px">mdi-account-multiple-check</v-icon>
+              <v-icon class="" size="48px">mdi-account-multiple</v-icon>
             </v-list-item-avatar>
           </v-list-item>
         </v-card>
@@ -90,7 +89,7 @@
             </v-list-item-content>
 
             <v-list-item-avatar tile>
-              <v-icon class="" size="32px">mdi-doctor</v-icon>
+              <v-icon class="" size="48px">mdi-account-check</v-icon>
             </v-list-item-avatar>
           </v-list-item>
         </v-card>
@@ -108,7 +107,7 @@
             </v-list-item-content>
 
             <v-list-item-avatar tile>
-              <v-icon size="32px">mdi-account-alert</v-icon>
+              <v-icon size="48px">mdi-account-arrow-left</v-icon>
             </v-list-item-avatar>
           </v-list-item>
         </v-card>
@@ -126,7 +125,7 @@
             </v-list-item-content>
 
             <v-list-item-avatar tile>
-              <v-icon size="32px">mdi-account-multiple-remove</v-icon>
+              <v-icon size="48px">mdi-account</v-icon>
             </v-list-item-avatar>
           </v-list-item>
         </v-card>
@@ -144,7 +143,7 @@
             </v-list-item-content>
 
             <v-list-item-avatar tile>
-              <v-icon size="32px">mdi-account-multiple-minus</v-icon>
+              <v-icon size="48px">mdi-badge-account</v-icon>
             </v-list-item-avatar>
           </v-list-item>
         </v-card>
@@ -160,9 +159,8 @@
                 {{ phasePre[0].candidates }}
               </v-list-item-subtitle>
             </v-list-item-content>
-
             <v-list-item-avatar tile>
-              <v-icon size="32px">mdi-account-plus</v-icon>
+              <v-icon size="48px">mdi-microscope</v-icon>
             </v-list-item-avatar>
           </v-list-item>
         </v-card>
