@@ -6,7 +6,7 @@
           <v-list-item two-line="">
             <v-list-item-content>
               <v-list-item-title class="">
-                Total
+                Total nominees
               </v-list-item-title>
               <v-list-item-subtitle class="display-1 font-weight-black">
                 44
@@ -74,7 +74,7 @@
         </v-card>
       </v-col>
     </v-row>
-    <v-row>
+    <v-row class="mt-n4">
       <v-col cols="12" sm="6" md="6" lg="2" xl="3">
         <v-card outlined class="orange lighten-2">
           <v-list-item two-line="">
@@ -147,7 +147,7 @@
           </v-list-item>
         </v-card>
       </v-col>
-      <v-col cols="12" sm="6" md="4" lg="3" xl="3">
+      <v-col cols="12" sm="12" md="4" lg="3" xl="3">
         <v-card outlined class="success">
           <v-list-item two-line="">
             <v-list-item-content>
