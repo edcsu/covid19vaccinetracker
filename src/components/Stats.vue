@@ -2,43 +2,59 @@
   <v-container fluid>
     <v-row>
       <v-col cols="12" sm="6" md="3" lg="3" xl="3" class="">
-        <v-card outlined class="info">
-          <v-list-item two-line="">
-            <v-list-item-content>
-              <v-list-item-title class="">
-                Total nominees
-              </v-list-item-title>
-              <v-list-item-subtitle class="display-1 font-weight-black">
-                {{ totalNominees }}
-              </v-list-item-subtitle>
-            </v-list-item-content>
+        <v-tooltip bottom>
+          <template v-slot:activator="{ on }">
+            <v-card outlined class="info" v-on="on">
+              <v-list-item two-line="">
+                <v-list-item-content>
+                  <v-list-item-title class="">
+                    Total nominees
+                  </v-list-item-title>
+                  <v-list-item-subtitle class="display-1 font-weight-black">
+                    {{ totalNominees }}
+                  </v-list-item-subtitle>
+                </v-list-item-content>
 
-            <v-list-item-avatar tile>
-              <v-icon class="" size="32px">mdi-needle</v-icon>
-            </v-list-item-avatar>
-          </v-list-item>
-        </v-card>
+                <v-list-item-avatar tile>
+                  <v-icon class="" size="32px">mdi-needle</v-icon>
+                </v-list-item-avatar>
+              </v-list-item>
+            </v-card>
+          </template>
+          <span>
+            Total vaccine candidates at the moment
+          </span>
+        </v-tooltip>
       </v-col>
       <v-col cols="12" sm="6" md="4" lg="2" xl="2">
-        <v-card outlined class="pink darken-2">
-          <v-list-item two-line="">
-            <v-list-item-content>
-              <v-list-item-title class="">
-                Approved
-              </v-list-item-title>
-              <v-list-item-subtitle class="display-1 font-weight-black">
-                0
-              </v-list-item-subtitle>
-            </v-list-item-content>
+        <v-tooltip top>
+          <template v-slot:activator="{ on }">
+            <v-card outlined class="pink darken-2" v-on="on">
+              <v-list-item two-line="">
+                <v-list-item-content>
+                  <v-list-item-title class="">
+                    Approved
+                  </v-list-item-title>
+                  <v-list-item-subtitle class="display-1 font-weight-black">
+                    0
+                  </v-list-item-subtitle>
+                </v-list-item-content>
 
-            <v-list-item-avatar tile>
-              <v-icon class="" size="32px">mdi-shield-check</v-icon>
-            </v-list-item-avatar>
-          </v-list-item>
-        </v-card>
+                <v-list-item-avatar tile>
+                  <v-icon class="" size="32px">mdi-shield-check</v-icon>
+                </v-list-item-avatar>
+              </v-list-item>
+            </v-card>
+          </template>
+          <span>
+            Approved vaccine by regulators in country of origin.
+          </span>
+        </v-tooltip>
       </v-col>
       <v-col cols="12" sm="6" md="3" lg="3" xl="3">
-        <v-card outlined class="deep-purple darken-1">
+        <v-tooltip top>
+          <template v-slot:activator="{ on }">
+            <v-card outlined class="deep-purple darken-1" v-on="on">
           <v-list-item two-line="">
             <v-list-item-content>
               <v-list-item-title class="">
@@ -54,6 +70,11 @@
             </v-list-item-avatar>
           </v-list-item>
         </v-card>
+          </template>
+          <span>
+            Larger trials involving thousands of people.
+          </span>
+        </v-tooltip>
       </v-col>
       <v-col cols="12" sm="6" md="4" lg="2" xl="2">
         <v-card outlined class="light-blue darken-4">
@@ -90,12 +111,13 @@
             </v-list-item-avatar>
           </v-list-item>
         </v-card>
-
       </v-col>
     </v-row>
     <v-row class="mt-n4">
       <v-col cols="12" sm="6" md="4" lg="2" xl="2">
-        <v-card outlined class="success">
+        <v-tooltip bottom>
+          <template v-slot:activator="{ on }">
+            <v-card outlined class="success" v-on="on">
           <v-list-item two-line="">
             <v-list-item-content>
               <v-list-item-title class="">
@@ -111,6 +133,11 @@
             </v-list-item-avatar>
           </v-list-item>
         </v-card>
+          </template>
+          <span>
+            Larger trials involving hundreds of people.
+          </span>
+        </v-tooltip>
       </v-col>
       <v-col cols="12" sm="6" md="4" lg="2" xl="2">
         <v-card outlined class="lime darken-2">
@@ -131,7 +158,9 @@
         </v-card>
       </v-col>
       <v-col cols="12" sm="6" md="4" lg="2" xl="2">
-        <v-card outlined class="amber">
+        <v-tooltip bottom>
+          <template v-slot:activator="{ on }">
+            <v-card outlined class="amber" v-on="on">
           <v-list-item two-line="">
             <v-list-item-content>
               <v-list-item-title class="">
@@ -147,9 +176,16 @@
             </v-list-item-avatar>
           </v-list-item>
         </v-card>
+          </template>
+          <span>
+            Involves a small group of adults.
+          </span>
+        </v-tooltip>
       </v-col>
       <v-col cols="12" sm="6" md="6" lg="3" xl="3">
-        <v-card outlined class="yellow darken-3">
+        <v-tooltip bottom>
+          <template v-slot:activator="{ on }">
+            <v-card outlined class="yellow darken-3" v-on="on">
           <v-list-item two-line="">
             <v-list-item-content>
               <v-list-item-title class="">
@@ -165,10 +201,17 @@
             </v-list-item-avatar>
           </v-list-item>
         </v-card>
+          </template>
+          <span>
+            Use tissue-culture or cell-culture systems and animal testing.
+          </span>
+        </v-tooltip>
       </v-col>
       <v-col cols="12" sm="12" md="6" lg="3" xl="3">
-        <v-card outlined class="orange">
-        <v-list-item two-line="">
+        <v-tooltip bottom>
+          <template v-slot:activator="{ on }">
+            <v-card outlined class="orange" v-on="on">
+          <v-list-item two-line="">
             <v-list-item-content>
               <v-list-item-title class="">
                 {{ phasePre[0].phase }}
@@ -182,6 +225,11 @@
             </v-list-item-avatar>
           </v-list-item>
         </v-card>
+          </template>
+          <span>
+            Laboratory research.
+          </span>
+        </v-tooltip>
       </v-col>
     </v-row>
   </v-container>
