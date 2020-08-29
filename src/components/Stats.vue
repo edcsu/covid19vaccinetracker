@@ -14,7 +14,25 @@
             </v-list-item-content>
 
             <v-list-item-avatar tile>
-              <v-icon class="" size="48px">mdi-needle</v-icon>
+              <v-icon class="" size="32px">mdi-needle</v-icon>
+            </v-list-item-avatar>
+          </v-list-item>
+        </v-card>
+      </v-col>
+      <v-col cols="12" sm="6" md="4" lg="2" xl="2">
+        <v-card outlined class="pink darken-2">
+          <v-list-item two-line="">
+            <v-list-item-content>
+              <v-list-item-title class="">
+                Approved
+              </v-list-item-title>
+              <v-list-item-subtitle class="display-1 font-weight-black">
+                0
+              </v-list-item-subtitle>
+            </v-list-item-content>
+
+            <v-list-item-avatar tile>
+              <v-icon class="" size="32px">mdi-shield-check</v-icon>
             </v-list-item-avatar>
           </v-list-item>
         </v-card>
@@ -32,12 +50,12 @@
             </v-list-item-content>
 
             <v-list-item-avatar tile>
-              <v-icon class="" size="48px">mdi-account-group</v-icon>
+              <v-icon class="" size="32px">mdi-account-group</v-icon>
             </v-list-item-avatar>
           </v-list-item>
         </v-card>
       </v-col>
-      <v-col cols="12" sm="6" md="3" lg="3" xl="3">
+      <v-col cols="12" sm="6" md="4" lg="2" xl="2">
         <v-card outlined class="light-blue darken-4">
           <v-list-item two-line="">
             <v-list-item-content>
@@ -50,12 +68,12 @@
             </v-list-item-content>
 
             <v-list-item-avatar tile>
-              <v-icon class="" size="48px">mdi-account-multiple-check</v-icon>
+              <v-icon class="" size="32px">mdi-account-multiple-check</v-icon>
             </v-list-item-avatar>
           </v-list-item>
         </v-card>
       </v-col>
-      <v-col cols="12" sm="6" md="3" lg="3" xl="3">
+      <v-col cols="12" sm="12" md="4" lg="2" xl="2">
         <v-card outlined class="light-green darken-4">
           <v-list-item two-line="">
             <v-list-item-content>
@@ -68,7 +86,7 @@
             </v-list-item-content>
 
             <v-list-item-avatar tile>
-              <v-icon class="" size="48px">mdi-account-multiple</v-icon>
+              <v-icon class="" size="32px">mdi-account-multiple</v-icon>
             </v-list-item-avatar>
           </v-list-item>
         </v-card>
@@ -89,7 +107,7 @@
             </v-list-item-content>
 
             <v-list-item-avatar tile>
-              <v-icon class="" size="48px">mdi-account-check</v-icon>
+              <v-icon class="" size="32px">mdi-account-check</v-icon>
             </v-list-item-avatar>
           </v-list-item>
         </v-card>
@@ -107,7 +125,7 @@
             </v-list-item-content>
 
             <v-list-item-avatar tile>
-              <v-icon size="48px">mdi-account-arrow-left</v-icon>
+              <v-icon size="32px">mdi-account-arrow-left</v-icon>
             </v-list-item-avatar>
           </v-list-item>
         </v-card>
@@ -125,7 +143,7 @@
             </v-list-item-content>
 
             <v-list-item-avatar tile>
-              <v-icon size="48px">mdi-account</v-icon>
+              <v-icon size="32px">mdi-account</v-icon>
             </v-list-item-avatar>
           </v-list-item>
         </v-card>
@@ -143,7 +161,7 @@
             </v-list-item-content>
 
             <v-list-item-avatar tile>
-              <v-icon size="48px">mdi-badge-account</v-icon>
+              <v-icon size="32px">mdi-badge-account</v-icon>
             </v-list-item-avatar>
           </v-list-item>
         </v-card>
@@ -160,7 +178,7 @@
               </v-list-item-subtitle>
             </v-list-item-content>
             <v-list-item-avatar tile>
-              <v-icon size="48px">mdi-microscope</v-icon>
+              <v-icon size="32px">mdi-microscope</v-icon>
             </v-list-item-avatar>
           </v-list-item>
         </v-card>
