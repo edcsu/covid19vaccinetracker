@@ -1,7 +1,7 @@
 <template>
   <div class="home">
     <Stats :totalCandidates=totalCandidates :totalPhases=totalPhases  class="mt-n4" />
-    <Table class="mt-n6 mb-8"/>
+    <Table :candidates=candidates class="mt-n6 mb-8"/>
   </div>
 </template>
 
@@ -26,7 +26,7 @@ export default {
 
   data: () => ({
     totalPhases: [],
-    Candidates: [],
+    candidates: [],
     totalCandidates: totalCandidates,
     source: source,
     timeInterval: 600000,
@@ -50,21 +50,21 @@ export default {
 
   methods: {
     async getGlobalDetails () {
-      this.globalLoaded = false
+      this.vaccineLoaded = false
       try {
         const response = await getContent(baseApiUrl, vaccineDetails.vaccine)
-        this.Candidates = response.data.data
+        this.candidates = response.data.data
         this.totalPhases = response.data.phases
         this.source = response.data.source
         this.totalCandidates = response.data.totalCandidates
         console.error(this.totalPhases)
-        this.globalLoaded = true
+        this.vaccineLoaded = true
       } catch (error) {
-        this.globalLoaded = false
+        this.vaccineLoaded = false
         console.error(error)
-        // this.snackbarText = 'Failed to get data. Refresh again'
-        // this.snackbarColor = 'error'
-        // this.showSnackbar = true
+        this.snackbarText = 'Failed to get data. Refresh again'
+        this.snackbarColor = 'error'
+        this.showSnackbar = true
       }
     }
   }
