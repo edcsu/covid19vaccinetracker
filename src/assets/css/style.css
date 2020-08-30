@@ -131,3 +131,9 @@
   .svg-icon{
     fill: currentColor;
   }
+
+  .source {
+    font-style: italic;
+    font-size: 11.5px;
+    color: #808080;
+  }

@@ -17,7 +17,14 @@
         :items="totalCandidates"
         :search="search"
         :items-per-page="itemsPerPage"
-      >
+        :single-expand="singleExpand"
+        :expanded.sync="expanded"
+        item-key="candidate"
+        show-expand
+        >
+        <template v-slot:expanded-item="{ headers, item }">
+          <td :colspan="headers.length" class="pa-4" > <strong>Background: </strong> {{ item.details.substring(11) }}</td>
+        </template>
       </v-data-table>
     </v-card>
   </v-container>
@@ -49,8 +56,11 @@ export default {
         { text: 'Phase', filterable: true, value: 'trialPhase', width: 120 },
         { text: 'Sponsors', filterable: true, value: 'sponsors', width: 330 },
         { text: 'Institutions', filterable: true, value: 'institutions', width: 350 },
-        { text: 'Funding', filterable: true, value: 'funding' }
-      ]
+        { text: 'Funding', filterable: true, value: 'funding' },
+        { text: '', value: 'data-table-expand' }
+      ],
+      expanded: [],
+      singleExpand: true
     }
   }
 }

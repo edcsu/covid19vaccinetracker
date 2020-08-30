@@ -17,8 +17,16 @@
     </v-snackbar>
     <Stats :totalCandidates=totalCandidates :totalPhases=totalPhases  class="mt-n4" v-if="vaccineLoaded" />
     <StatsSkeleton v-else />
-    <Table :candidates=candidates class="mt-n6 mb-8" v-if="vaccineLoaded"/>
+    <Table :candidates=candidates class="mt-n6" v-if="vaccineLoaded"/>
     <TableSkeleton v-else />
+    <v-container fluid v-if="vaccineLoaded">
+      <v-row>
+        <p class="source ml-4"  >
+          <strong> Source: </strong> {{source}}
+        </p>
+      </v-row>
+    </v-container>
+    <SourceSkeleton v-else />
   </div>
 </template>
 
@@ -28,6 +36,7 @@ import Stats from '@/components/Stats.vue'
 import Table from '@/components/Table.vue'
 import StatsSkeleton from '@/components/StatsSkeleton'
 import TableSkeleton from '@/components/TableSkeleton'
+import SourceSkeleton from '@/components/SourceSkeleton'
 
 import { baseApiUrl, source, totalCandidates, vaccineDetails } from '@/Helpers/apiHelpers'
 
@@ -42,7 +51,8 @@ export default {
     Stats,
     Table,
     StatsSkeleton,
-    TableSkeleton
+    TableSkeleton,
+    SourceSkeleton
   },
 
   data: () => ({
