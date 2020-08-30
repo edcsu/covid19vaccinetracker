@@ -21,8 +21,9 @@
     <TableSkeleton v-else />
     <v-container fluid v-if="vaccineLoaded">
       <v-row>
-        <p class="source ml-4"  >
-          <strong> Source: </strong> {{source}}
+        <p class="source-text ml-4"  >
+          <strong> Source: </strong>
+          <span class="font-italic">{{source}} </span>
         </p>
       </v-row>
     </v-container>
