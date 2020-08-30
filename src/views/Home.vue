@@ -1,7 +1,23 @@
 <template>
   <div class="home">
-    <Stats :totalCandidates=totalCandidates :totalPhases=totalPhases  class="mt-n4" />
-    <Table :candidates=candidates class="mt-n6 mb-8"/>
+    <v-snackbar
+        top
+        right
+        v-model="showSnackbar"
+        :timeout="snackbarTimeout"
+        :color="snackbarColor"
+      >
+        {{ snackbarText }}
+        <v-btn
+          text
+          @click="showSnackbar = false"
+        >
+          Close
+        </v-btn>
+    </v-snackbar>
+    <Stats :totalCandidates=totalCandidates :totalPhases=totalPhases  class="mt-n4" v-if="vaccineLoaded" />
+    <StatsSkeleton v-else />
+    <Table :candidates=candidates class="mt-n6 mb-8" v-if="vaccineLoaded"/>
   </div>
 </template>
 
@@ -9,6 +25,7 @@
 // @ is an alias to /src
 import Stats from '@/components/Stats.vue'
 import Table from '@/components/Table.vue'
+import StatsSkeleton from '@/components/StatsSkeleton'
 
 import { baseApiUrl, source, totalCandidates, vaccineDetails } from '@/Helpers/apiHelpers'
 
@@ -21,7 +38,8 @@ export default {
 
   components: {
     Stats,
-    Table
+    Table,
+    StatsSkeleton
   },
 
   data: () => ({
