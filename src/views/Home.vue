@@ -18,6 +18,7 @@
     <Stats :totalCandidates=totalCandidates :totalPhases=totalPhases  class="mt-n4" v-if="vaccineLoaded" />
     <StatsSkeleton v-else />
     <Table :candidates=candidates class="mt-n6 mb-8" v-if="vaccineLoaded"/>
+    <TableSkeleton v-else />
   </div>
 </template>
 
@@ -26,6 +27,7 @@
 import Stats from '@/components/Stats.vue'
 import Table from '@/components/Table.vue'
 import StatsSkeleton from '@/components/StatsSkeleton'
+import TableSkeleton from '@/components/TableSkeleton'
 
 import { baseApiUrl, source, totalCandidates, vaccineDetails } from '@/Helpers/apiHelpers'
 
@@ -39,7 +41,8 @@ export default {
   components: {
     Stats,
     Table,
-    StatsSkeleton
+    StatsSkeleton,
+    TableSkeleton
   },
 
   data: () => ({
