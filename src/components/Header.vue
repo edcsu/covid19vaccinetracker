@@ -11,6 +11,23 @@
     <!-- <v-tooltip bottom nudge-left="150">
       <template v-slot:activator="{ on }">
         <v-btn
+          href="https://github.com/edcsu/covid19vaccinetracker"
+          target="_blank"
+          icon
+          v-on="on"
+        >
+          <v-icon class="svg-icon white--text" v-text="'$vuetify.icons.github'"></v-icon>
+        </v-btn>
+      </template>
+      <span>
+        Recognised on Awesome NovelCOVID projects
+        <v-icon class="white--text">mdi-hand-pointing-up</v-icon>
+      </span>
+    </v-tooltip> -->
+
+    <!-- <v-tooltip bottom nudge-left="150">
+      <template v-slot:activator="{ on }">
+        <v-btn
           href="https://github.com/NovelCOVID/awesome-novelcovid"
           target="_blank"
           icon
@@ -42,7 +59,7 @@
       </span>
     </v-tooltip>
 
-    <v-tooltip bottom>
+    <v-tooltip bottom nudge-left="70">
       <template v-slot:activator="{ on }">
         <v-btn
           href="https://twitter.com/skeith696"
