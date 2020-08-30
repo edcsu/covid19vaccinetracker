@@ -1,7 +1,7 @@
 <template>
   <v-container fluid>
     <v-row>
-      <v-col cols="12" sm="6" md="3" lg="3" xl="3" class>
+      <v-col cols="12" sm="6" md="6" lg="3" xl="3" class>
         <v-tooltip bottom>
           <template v-slot:activator="{ on }">
             <v-card outlined class="info" v-on="on">
@@ -20,7 +20,7 @@
           <span>Total vaccine candidates at the moment</span>
         </v-tooltip>
       </v-col>
-      <v-col cols="12" sm="6" md="4" lg="2" xl="2">
+      <v-col cols="12" sm="6" md="6" lg="2" xl="2">
         <v-tooltip top>
           <template v-slot:activator="{ on }">
             <v-card outlined class="pink darken-2" v-on="on">
@@ -39,7 +39,7 @@
           <span>Approved vaccine by regulators in country of origin.</span>
         </v-tooltip>
       </v-col>
-      <v-col cols="12" sm="6" md="3" lg="3" xl="3">
+      <v-col cols="12" sm="6" md="4" lg="3" xl="3">
         <v-tooltip top>
           <template v-slot:activator="{ on }">
             <v-card outlined class="deep-purple darken-1" v-on="on">
@@ -224,6 +224,7 @@ export default {
       return this.totalCandidates
     },
     phase3: function () {
+      console.log(this.totalPhases)
       return this.totalPhases.filter((e) => e.phase === 'Phase 3')
     },
     phase23: function () {
