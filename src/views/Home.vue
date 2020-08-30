@@ -89,7 +89,6 @@ export default {
         this.source = response.data.source
         this.totalCandidates = response.data.totalCandidates
         this.vaccineLoaded = true
-        console.log(this.totalPhases)
       } catch (error) {
         this.vaccineLoaded = false
         console.error(error)
