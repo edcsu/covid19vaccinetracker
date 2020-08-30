@@ -7,7 +7,7 @@
             <v-card outlined class="info" v-on="on">
               <v-list-item two-line>
                 <v-list-item-content>
-                  <v-list-item-title class>Total nominees</v-list-item-title>
+                  <v-list-item-title class>Total candidates</v-list-item-title>
                   <v-list-item-subtitle class="display-1 font-weight-black">{{ totalNominees }}</v-list-item-subtitle>
                 </v-list-item-content>
 

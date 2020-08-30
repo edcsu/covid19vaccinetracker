@@ -17,7 +17,8 @@
         :items="totalCandidates"
         :search="search"
         :items-per-page="itemsPerPage"
-      ></v-data-table>
+      >
+      </v-data-table>
     </v-card>
   </v-container>
 </template>
@@ -42,10 +43,11 @@ export default {
           text: 'Name',
           align: 'start',
           filterable: true,
-          value: 'candidate'
+          value: 'candidate',
+          width: 300
         },
-        { text: 'Phase', filterable: true, value: 'trialPhase' },
-        { text: 'Sponsors', filterable: true, value: 'sponsors' },
+        { text: 'Phase', filterable: true, value: 'trialPhase', width: 120 },
+        { text: 'Sponsors', filterable: true, value: 'sponsors', width: 330 },
         { text: 'Institutions', filterable: true, value: 'institutions' },
         { text: 'Funding', filterable: true, value: 'funding' }
       ]
