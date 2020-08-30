@@ -48,7 +48,7 @@ export default {
         },
         { text: 'Phase', filterable: true, value: 'trialPhase', width: 120 },
         { text: 'Sponsors', filterable: true, value: 'sponsors', width: 330 },
-        { text: 'Institutions', filterable: true, value: 'institutions' },
+        { text: 'Institutions', filterable: true, value: 'institutions', width: 350 },
         { text: 'Funding', filterable: true, value: 'funding' }
       ]
     }
