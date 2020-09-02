@@ -1,5 +1,12 @@
 <template>
-  <div class="home">
+  <div
+    :class="[
+      'home',
+      {
+        'mb-5': $vuetify.breakpoint.xs
+      }
+    ]"
+  >
     <v-snackbar
         top
         right
@@ -21,7 +28,7 @@
     <TableSkeleton v-else />
     <v-container fluid v-if="vaccineLoaded">
       <v-row>
-        <p class="source-text ml-4"  >
+        <p class="source-text ml-4">
           <strong> Source: </strong>
           <span class="font-italic">{{source}} </span>
         </p>

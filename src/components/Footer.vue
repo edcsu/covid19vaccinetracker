@@ -16,16 +16,26 @@
         <strong>#WEARMASKINPUBLIC</strong>
       </span>
       <span>
-        Visit
+        Get the latest on
         <a
           href="https://covid19globalstatviewer.web.app"
           target="_blank"
           rel="noopener noreferrer"
           class="white--text"
         >
-          Global COVID19 stat app
+          COVID19 globally
         </a>
-        for latest info.
+      </span>
+      <span>
+        Data from
+        <a
+          href="https://disease.sh"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="white--text"
+        >
+          NOVELCoVID19 API
+        </a>
       </span>
     </v-card-text>
   </v-footer>
