@@ -3,7 +3,7 @@
     <!-- <v-app-bar-nav-icon @click="$emit('hidesidemenu')"></v-app-bar-nav-icon> -->
     <v-icon class="svg-icon" v-text="'$vuetify.icons.corona'"></v-icon>
     <div class="ml-1 d-flex align-center font-weight-bold white--text">
-      COVID19 VACCINE TRACKER
+      <span class="d-none d-sm-flex"> COVID19 VACCINE </span> TRACKER
     </div>
 
     <v-spacer></v-spacer>
