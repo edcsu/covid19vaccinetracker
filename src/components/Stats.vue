@@ -99,7 +99,7 @@
               </v-list-item>
             </v-card>
           </template>
-          <span>Advanced phases 2</span>
+          <span>Advanced phase 2</span>
         </v-tooltip>
       </v-col>
     </v-row>
