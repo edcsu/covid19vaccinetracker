@@ -51,12 +51,12 @@ export default {
           align: 'start',
           filterable: true,
           value: 'candidate',
-          width: 300
+          width: 250
         },
         { text: 'Phase', filterable: true, value: 'trialPhase', width: 120 },
+        { text: 'Mechanism', filterable: true, value: 'mechanism', width: 200 },
         { text: 'Sponsors', filterable: true, value: 'sponsors', width: 330 },
         { text: 'Institutions', filterable: true, value: 'institutions', width: 350 },
-        { text: 'Funding', filterable: true, value: 'funding' },
         { text: '', value: 'data-table-expand' }
       ],
       expanded: [],

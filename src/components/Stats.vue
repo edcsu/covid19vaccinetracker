@@ -224,7 +224,6 @@ export default {
       return this.totalCandidates
     },
     phase3: function () {
-      console.log(this.totalPhases)
       return this.totalPhases.filter((e) => e.phase === 'Phase 3')
     },
     phase23: function () {
