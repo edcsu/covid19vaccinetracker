@@ -2,7 +2,7 @@
   <v-container fluid>
     <v-card elevation="5">
       <v-card-title>
-          Table of COVID19 Vaccine nominees
+          Table of COVID19 Vaccine candidates
         <v-spacer></v-spacer>
         <v-text-field
           v-model="search"
