@@ -3,7 +3,8 @@
     <!-- <v-app-bar-nav-icon @click="$emit('hidesidemenu')"></v-app-bar-nav-icon> -->
     <v-icon class="svg-icon" v-text="'$vuetify.icons.corona'"></v-icon>
     <div class="ml-1 d-flex align-center font-weight-bold white--text">
-      <span class="d-none d-sm-flex"> COVID19 VACCINE </span> TRACKER
+      <span class="d-none d-sm-flex"> COVID19 VACCINE </span>
+      <span class="ml-1"> TRACKER </span>
     </div>
 
     <v-spacer></v-spacer>
@@ -25,7 +26,7 @@
       </span>
     </v-tooltip> -->
 
-    <!-- <v-tooltip bottom nudge-left="150">
+    <v-tooltip bottom nudge-left="150">
       <template v-slot:activator="{ on }">
         <v-btn
           href="https://github.com/NovelCOVID/awesome-novelcovid"
@@ -40,7 +41,7 @@
         Recognised on Awesome NovelCOVID projects
         <v-icon class="white--text">mdi-hand-pointing-up</v-icon>
       </span>
-    </v-tooltip> -->
+    </v-tooltip>
 
     <v-tooltip bottom nudge-left="70">
       <template v-slot:activator="{ on }">
@@ -85,7 +86,7 @@
         v-on="on"
         color="info"
         class="ml-5"
-        label="Theme"
+        label=""
         ></v-switch>
       </template>
       <span>
