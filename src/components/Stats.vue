@@ -84,29 +84,6 @@
       <v-col cols="12" sm="12" md="4" lg="2" xl="2">
         <v-tooltip bottom>
           <template v-slot:activator="{ on }">
-            <v-card outlined class="light-green darken-4" v-on="on">
-              <v-list-item two-line>
-                <v-list-item-content>
-                  <v-list-item-title class>{{ phase2b[0].phase }}</v-list-item-title>
-                  <v-list-item-subtitle
-                    class="display-1 font-weight-black"
-                  >{{ phase2b[0].candidates }}</v-list-item-subtitle>
-                </v-list-item-content>
-
-                <v-list-item-avatar tile>
-                  <v-icon class size="32px">mdi-account-multiple</v-icon>
-                </v-list-item-avatar>
-              </v-list-item>
-            </v-card>
-          </template>
-          <span>Advanced phase 2</span>
-        </v-tooltip>
-      </v-col>
-    </v-row>
-    <v-row class="mt-n4">
-      <v-col cols="12" sm="6" md="4" lg="2" xl="2">
-        <v-tooltip bottom>
-          <template v-slot:activator="{ on }">
             <v-card outlined class="success" v-on="on">
               <v-list-item two-line>
                 <v-list-item-content>
@@ -125,7 +102,9 @@
           <span>Larger trials involving hundreds of people.</span>
         </v-tooltip>
       </v-col>
-      <v-col cols="12" sm="6" md="4" lg="2" xl="2">
+    </v-row>
+    <v-row class="mt-n4">
+      <v-col cols="12" sm="6" md="6" lg="3" xl="3">
         <v-tooltip bottom>
           <template v-slot:activator="{ on }">
             <v-card outlined class="lime darken-2" v-on="on">
@@ -146,7 +125,7 @@
           <span>Combine phases 1 and 2</span>
         </v-tooltip>
       </v-col>
-      <v-col cols="12" sm="6" md="4" lg="2" xl="2">
+      <v-col cols="12" sm="6" md="6" lg="3" xl="3">
         <v-tooltip bottom>
           <template v-slot:activator="{ on }">
             <v-card outlined class="amber" v-on="on">
@@ -188,7 +167,7 @@
           <span>Use tissue-culture or cell-culture systems and animal testing.</span>
         </v-tooltip>
       </v-col>
-      <v-col cols="12" sm="12" md="6" lg="3" xl="3">
+      <v-col cols="12" sm="6" md="6" lg="3" xl="3">
         <v-tooltip bottom>
           <template v-slot:activator="{ on }">
             <v-card outlined class="orange" v-on="on">

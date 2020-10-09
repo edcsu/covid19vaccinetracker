@@ -77,7 +77,7 @@
       </span>
     </v-tooltip>
 
-    <v-tooltip bottom>
+    <v-tooltip top>
       <template v-slot:activator="{ on }">
         <v-switch
         v-model="$vuetify.theme.dark"
