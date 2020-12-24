@@ -20,7 +20,7 @@
           <span>Total vaccine candidates at the moment</span>
         </v-tooltip>
       </v-col>
-      <v-col cols="12" sm="6" md="6" lg="2" xl="2">
+      <v-col cols="12" sm="6" md="6" lg="3" xl="3">
         <v-tooltip top>
           <template v-slot:activator="{ on }">
             <v-card outlined class="pink darken-2" v-on="on">
@@ -39,7 +39,7 @@
           <span>Approved vaccine by regulators in country of origin.</span>
         </v-tooltip>
       </v-col>
-      <v-col cols="12" sm="6" md="4" lg="3" xl="3">
+      <v-col cols="12" sm="6" md="6" lg="3" xl="3">
         <v-tooltip top>
           <template v-slot:activator="{ on }">
             <v-card outlined class="deep-purple darken-1" v-on="on">
@@ -60,7 +60,7 @@
           <span>Larger trials involving thousands of people.</span>
         </v-tooltip>
       </v-col>
-      <v-col cols="12" sm="6" md="4" lg="2" xl="2">
+      <v-col cols="12" sm="6" md="4" lg="3" xl="3">
         <v-tooltip bottom>
           <template v-slot:activator="{ on }">
             <v-card outlined class="light-blue darken-4" v-on="on">
@@ -81,7 +81,9 @@
           <span>Combine phases 2 and 3</span>
         </v-tooltip>
       </v-col>
-      <v-col cols="12" sm="12" md="4" lg="2" xl="2">
+    </v-row>
+    <v-row class="mt-n4">
+      <v-col cols="12" sm="6" md="6" lg="3" xl="3">
         <v-tooltip bottom>
           <template v-slot:activator="{ on }">
             <v-card outlined class="success" v-on="on">
@@ -102,8 +104,6 @@
           <span>Larger trials involving hundreds of people.</span>
         </v-tooltip>
       </v-col>
-    </v-row>
-    <v-row class="mt-n4">
       <v-col cols="12" sm="6" md="6" lg="3" xl="3">
         <v-tooltip bottom>
           <template v-slot:activator="{ on }">
@@ -144,27 +144,6 @@
             </v-card>
           </template>
           <span>Involves a small group of adults.</span>
-        </v-tooltip>
-      </v-col>
-      <v-col cols="12" sm="6" md="6" lg="3" xl="3">
-        <v-tooltip bottom>
-          <template v-slot:activator="{ on }">
-            <v-card outlined class="yellow darken-3" v-on="on">
-              <v-list-item two-line>
-                <v-list-item-content>
-                  <v-list-item-title class>{{ phaseEarly[0].phase }}</v-list-item-title>
-                  <v-list-item-subtitle
-                    class="display-1 font-weight-black"
-                  >{{ phaseEarly[0].candidates }}</v-list-item-subtitle>
-                </v-list-item-content>
-
-                <v-list-item-avatar tile>
-                  <v-icon size="32px">mdi-badge-account</v-icon>
-                </v-list-item-avatar>
-              </v-list-item>
-            </v-card>
-          </template>
-          <span>Use tissue-culture or cell-culture systems and animal testing.</span>
         </v-tooltip>
       </v-col>
       <v-col cols="12" sm="6" md="6" lg="3" xl="3">
