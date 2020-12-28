@@ -13,6 +13,8 @@
     "postuninstall": "electron-builder install-app-deps"
   },
   "main": "background.js",
+  "author": "Ssewannonda Keith Edwin",
+  "description": "A Covid-19 vaccine tracker app",
   "dependencies": {
     "@mdi/font": "^5.5.55",
     "axios": "^0.20.0",
