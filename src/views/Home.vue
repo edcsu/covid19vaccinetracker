@@ -1,111 +1,109 @@
+<script setup>
+import { onMounted, onUnmounted, ref } from 'vue'
+import { useDisplay } from 'vuetify'
+
+import Stats from '@/components/Stats.vue'
+import Table from '@/components/Table.vue'
+import StatsSkeleton from '@/components/StatsSkeleton.vue'
+import TableSkeleton from '@/components/TableSkeleton.vue'
+import SourceSkeleton from '@/components/SourceSkeleton.vue'
+
+import { baseApiUrl, source as initialSource, totalCandidates as initialTotal, vaccineDetails } from '@/Helpers/apiHelpers'
+import { getContent } from '@/Helpers/helperMethods'
+
+const { xs } = useDisplay()
+
+const totalPhases = ref([])
+const candidates = ref([])
+const totalCandidates = ref(initialTotal)
+const source = ref(initialSource)
+const timeInterval = 600000
+const vaccineLoaded = ref(false)
+const showSnackbar = ref(false)
+const snackbarColor = ref('')
+const snackbarText = ref('')
+const snackbarTimeout = 5000
+
+let intervalId = null
+
+async function getGlobalDetails () {
+  vaccineLoaded.value = false
+  try {
+    const response = await getContent(baseApiUrl, vaccineDetails.vaccine)
+    candidates.value = response.data.data
+    totalPhases.value = response.data.phases
+    source.value = response.data.source
+    totalCandidates.value = response.data.totalCandidates
+    vaccineLoaded.value = true
+  } catch (error) {
+    vaccineLoaded.value = false
+    console.error(error)
+    snackbarText.value = 'Failed to get data. Refresh again'
+    snackbarColor.value = 'error'
+    showSnackbar.value = true
+  }
+}
+
+getGlobalDetails()
+
+onMounted(() => {
+  intervalId = setInterval(getGlobalDetails, timeInterval)
+})
+
+onUnmounted(() => {
+  clearInterval(intervalId)
+})
+</script>
+
 <template>
   <div
     :class="[
       'home',
       {
-        'mb-5': $vuetify.breakpoint.xs
+        'mb-5': xs
       }
     ]"
   >
     <v-snackbar
-        top
-        right
-        v-model="showSnackbar"
-        :timeout="snackbarTimeout"
-        :color="snackbarColor"
-      >
-        {{ snackbarText }}
+      v-model="showSnackbar"
+      location="top right"
+      :timeout="snackbarTimeout"
+      :color="snackbarColor"
+    >
+      {{ snackbarText }}
+      <template #actions>
         <v-btn
-          text
+          variant="text"
           @click="showSnackbar = false"
         >
           Close
         </v-btn>
+      </template>
     </v-snackbar>
-    <Stats :totalCandidates=totalCandidates :totalPhases=totalPhases  class="mt-n4" v-if="vaccineLoaded" />
+    <Stats
+      v-if="vaccineLoaded"
+      :total-candidates="totalCandidates"
+      :total-phases="totalPhases"
+      class="mt-n4"
+    />
     <StatsSkeleton v-else />
-    <Table :candidates=candidates class="mt-n6" v-if="vaccineLoaded"/>
+    <Table
+      v-if="vaccineLoaded"
+      :candidates="candidates"
+      class="mt-n6"
+    />
     <TableSkeleton v-else />
-    <v-container fluid v-if="vaccineLoaded">
+    <v-container
+      v-if="vaccineLoaded"
+      fluid
+    >
       <v-row>
         <p class="source-text ml-4">
           <strong> Source: </strong>
-          <span class="font-italic">{{source}} </span>
+          <span class="font-italic">{{ source }} </span>
         </p>
       </v-row>
     </v-container>
     <SourceSkeleton v-else />
   </div>
 </template>
-
-<script>
-// @ is an alias to /src
-import Stats from '@/components/Stats.vue'
-import Table from '@/components/Table.vue'
-import StatsSkeleton from '@/components/StatsSkeleton'
-import TableSkeleton from '@/components/TableSkeleton'
-import SourceSkeleton from '@/components/SourceSkeleton'
-
-import { baseApiUrl, source, totalCandidates, vaccineDetails } from '@/Helpers/apiHelpers'
-
-import {
-  getContent
-} from '@/Helpers/helperMethods'
-
-export default {
-  name: 'Home',
-
-  components: {
-    Stats,
-    Table,
-    StatsSkeleton,
-    TableSkeleton,
-    SourceSkeleton
-  },
-
-  data: () => ({
-    totalPhases: [],
-    candidates: [],
-    totalCandidates: totalCandidates,
-    source: source,
-    timeInterval: 600000,
-    vaccineLoaded: false,
-    continentLoaded: false,
-    showSnackbar: false,
-    snackbarColor: '',
-    snackbarText: '',
-    snackbarTimeout: 5000
-  }),
-
-  created () {
-    this.getGlobalDetails()
-  },
-
-  mounted () {
-    setInterval(() => {
-      this.getGlobalDetails()
-    }, this.timeInterval)
-  },
-
-  methods: {
-    async getGlobalDetails () {
-      this.vaccineLoaded = false
-      try {
-        const response = await getContent(baseApiUrl, vaccineDetails.vaccine)
-        this.candidates = response.data.data
-        this.totalPhases = response.data.phases
-        this.source = response.data.source
-        this.totalCandidates = response.data.totalCandidates
-        this.vaccineLoaded = true
-      } catch (error) {
-        this.vaccineLoaded = false
-        console.error(error)
-        this.snackbarText = 'Failed to get data. Refresh again'
-        this.snackbarColor = 'error'
-        this.showSnackbar = true
-      }
-    }
-  }
-
-}
-</script>

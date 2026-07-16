@@ -1,67 +1,66 @@
+<script setup>
+import { ref } from 'vue'
+
+defineProps({
+  candidates: {
+    type: Array,
+    default: () => []
+  }
+})
+
+const search = ref('')
+const expanded = ref([])
+const itemsPerPage = ref(5)
+
+const headers = [
+  {
+    title: 'Name',
+    align: 'start',
+    key: 'candidate',
+    width: 250
+  },
+  { title: 'Phase', key: 'trialPhase', width: 120 },
+  { title: 'Mechanism', key: 'mechanism', width: 200 },
+  { title: 'Sponsors', key: 'sponsors', width: 330 },
+  { title: 'Institutions', key: 'institutions', width: 350 },
+  { title: '', key: 'data-table-expand' }
+]
+</script>
+
 <template>
   <v-container fluid>
     <v-card elevation="5">
-      <v-card-title>
-          Table of COVID19 Vaccine candidates
-        <v-spacer></v-spacer>
+      <v-card-title class="d-flex align-center">
+        Table of COVID19 Vaccine candidates
+        <v-spacer />
         <v-text-field
           v-model="search"
-          append-icon="mdi-magnify"
+          append-inner-icon="mdi-magnify"
           label="Search"
           single-line
           hide-details
-        ></v-text-field>
+        />
       </v-card-title>
       <v-data-table
+        v-model:expanded="expanded"
         :headers="headers"
-        :items="totalCandidates"
+        :items="candidates"
         :search="search"
         :items-per-page="itemsPerPage"
-        :single-expand="singleExpand"
-        :expanded.sync="expanded"
-        item-key="candidate"
+        item-value="candidate"
         show-expand
-        >
-        <template v-slot:expanded-item="{ headers, item }">
-          <td :colspan="headers.length" class="pa-4" > <strong>Background: </strong> {{ item.details.substring(11) }}</td>
+      >
+        <template #expanded-row="{ columns, item }">
+          <tr>
+            <td
+              :colspan="columns.length"
+              class="pa-4"
+            >
+              <strong>Background: </strong> {{ item.details.substring(11) }}
+            </td>
+          </tr>
         </template>
       </v-data-table>
     </v-card>
   </v-container>
 </template>
-
-<script>
-export default {
-  name: 'Table',
-  props: ['candidates'],
-
-  computed: {
-    totalCandidates: function () {
-      return this.candidates
-    }
-  },
-
-  data () {
-    return {
-      itemsPerPage: 5,
-      search: '',
-      headers: [
-        {
-          text: 'Name',
-          align: 'start',
-          filterable: true,
-          value: 'candidate',
-          width: 250
-        },
-        { text: 'Phase', filterable: true, value: 'trialPhase', width: 120 },
-        { text: 'Mechanism', filterable: true, value: 'mechanism', width: 200 },
-        { text: 'Sponsors', filterable: true, value: 'sponsors', width: 330 },
-        { text: 'Institutions', filterable: true, value: 'institutions', width: 350 },
-        { text: '', value: 'data-table-expand' }
-      ],
-      expanded: [],
-      singleExpand: true
-    }
-  }
-}
-</script>

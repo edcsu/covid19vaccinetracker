@@ -1,18 +1,24 @@
+<script setup>
+import { useDisplay } from 'vuetify'
+
+const { xs } = useDisplay()
+</script>
+
 <template>
-  <v-footer app class="primary">
+  <v-footer class="bg-primary">
     <v-card-text
       :class="[
         'pa-0',
-        'white--text',
+        'text-white',
         'd-flex',
         'justify-space-between',
         'font-weight-bold',
         {
-          'flex-column': $vuetify.breakpoint.xs
+          'flex-column': xs
         }
       ]"
     >
-      <span class>
+      <span>
         <strong>#WEARMASKINPUBLIC</strong>
       </span>
       <span>
@@ -21,7 +27,7 @@
           href="https://covid19globalstatviewer.web.app"
           target="_blank"
           rel="noopener noreferrer"
-          class="white--text"
+          class="text-white"
         >
           COVID19 globally
         </a>
@@ -32,7 +38,7 @@
           href="https://disease.sh"
           target="_blank"
           rel="noopener noreferrer"
-          class="white--text"
+          class="text-white"
         >
           NOVELCoVID19 API
         </a>

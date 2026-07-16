@@ -1,14 +1,18 @@
-import Vue from 'vue'
+import { createApp } from 'vue'
 import App from './App.vue'
-import './registerServiceWorker'
 import router from './router'
 import vuetify from './plugins/vuetify'
 import './assets/css/style.css'
 
-Vue.config.productionTip = false
+if ('serviceWorker' in navigator && window.location.protocol.startsWith('http')) {
+  import('virtual:pwa-register').then(({ registerSW }) => {
+    registerSW({ immediate: true })
+  }).catch(() => {
+    // PWA plugin not enabled (e.g. electron build) - ignore
+  })
+}
 
-new Vue({
-  router,
-  vuetify,
-  render: h => h(App)
-}).$mount('#app')
+createApp(App)
+  .use(router)
+  .use(vuetify)
+  .mount('#app')
