@@ -1,29 +1,29 @@
 <script setup>
 import { ref } from 'vue'
+import { thousandSeperator } from '@/Helpers/helperMethods'
 
 defineProps({
-  candidates: {
+  countries: {
     type: Array,
     default: () => []
   }
 })
 
 const search = ref('')
-const expanded = ref([])
-const itemsPerPage = ref(5)
+const itemsPerPage = ref(10)
 
 const headers = [
   {
-    title: 'Name',
+    title: 'Country',
     align: 'start',
-    key: 'candidate',
+    key: 'country',
     width: 250
   },
-  { title: 'Phase', key: 'trialPhase', width: 120 },
-  { title: 'Mechanism', key: 'mechanism', width: 200 },
-  { title: 'Sponsors', key: 'sponsors', width: 330 },
-  { title: 'Institutions', key: 'institutions', width: 350 },
-  { title: '', key: 'data-table-expand' }
+  { title: 'Total doses', key: 'total', align: 'end' },
+  { title: 'Daily doses', key: 'daily', align: 'end' },
+  { title: 'Doses per 100 people', key: 'totalPerHundred', align: 'end' },
+  { title: 'Daily per million', key: 'dailyPerMillion', align: 'end' },
+  { title: 'Reported', key: 'date', align: 'end' }
 ]
 </script>
 
@@ -31,7 +31,7 @@ const headers = [
   <v-container fluid>
     <v-card elevation="5">
       <v-card-title class="d-flex align-center">
-        Table of COVID19 Vaccine candidates
+        COVID19 vaccine doses administered by country
         <v-spacer />
         <v-text-field
           v-model="search"
@@ -42,23 +42,20 @@ const headers = [
         />
       </v-card-title>
       <v-data-table
-        v-model:expanded="expanded"
         :headers="headers"
-        :items="candidates"
+        :items="countries"
         :search="search"
         :items-per-page="itemsPerPage"
-        item-value="candidate"
-        show-expand
+        item-value="country"
       >
-        <template #expanded-row="{ columns, item }">
-          <tr>
-            <td
-              :colspan="columns.length"
-              class="pa-4"
-            >
-              <strong>Background: </strong> {{ item.details.substring(11) }}
-            </td>
-          </tr>
+        <template #item.total="{ value }">
+          {{ thousandSeperator(value) }}
+        </template>
+        <template #item.daily="{ value }">
+          {{ thousandSeperator(value) }}
+        </template>
+        <template #item.dailyPerMillion="{ value }">
+          {{ thousandSeperator(value) }}
         </template>
       </v-data-table>
     </v-card>

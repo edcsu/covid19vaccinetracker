@@ -8,15 +8,13 @@ import StatsSkeleton from '@/components/StatsSkeleton.vue'
 import TableSkeleton from '@/components/TableSkeleton.vue'
 import SourceSkeleton from '@/components/SourceSkeleton.vue'
 
-import { baseApiUrl, source as initialSource, totalCandidates as initialTotal, vaccineDetails } from '@/Helpers/apiHelpers'
+import { baseApiUrl, source, vaccineDetails } from '@/Helpers/apiHelpers'
 import { getContent } from '@/Helpers/helperMethods'
 
 const { xs } = useDisplay()
 
-const totalPhases = ref([])
-const candidates = ref([])
-const totalCandidates = ref(initialTotal)
-const source = ref(initialSource)
+const globalCoverage = ref(null)
+const countries = ref([])
 const timeInterval = 600000
 const vaccineLoaded = ref(false)
 const showSnackbar = ref(false)
@@ -29,11 +27,19 @@ let intervalId = null
 async function getGlobalDetails () {
   vaccineLoaded.value = false
   try {
-    const response = await getContent(baseApiUrl, vaccineDetails.vaccine)
-    candidates.value = response.data.data
-    totalPhases.value = response.data.phases
-    source.value = response.data.source
-    totalCandidates.value = response.data.totalCandidates
+    const [globalResponse, countriesResponse] = await Promise.all([
+      getContent(baseApiUrl, vaccineDetails.coverage),
+      getContent(baseApiUrl, vaccineDetails.countryCoverage)
+    ])
+
+    // last entry of the global timeline is the most recent day
+    globalCoverage.value = globalResponse.data.at(-1)
+
+    // flatten each country's single-day timeline into table rows
+    countries.value = countriesResponse.data
+      .map(({ country, timeline }) => ({ country, ...timeline.at(-1) }))
+      .sort((a, b) => b.total - a.total)
+
     vaccineLoaded.value = true
   } catch (error) {
     vaccineLoaded.value = false
@@ -82,14 +88,14 @@ onUnmounted(() => {
     </v-snackbar>
     <Stats
       v-if="vaccineLoaded"
-      :total-candidates="totalCandidates"
-      :total-phases="totalPhases"
+      :coverage="globalCoverage"
+      :countries="countries"
       class="mt-n4"
     />
     <StatsSkeleton v-else />
     <Table
       v-if="vaccineLoaded"
-      :candidates="candidates"
+      :countries="countries"
       class="mt-n6"
     />
     <TableSkeleton v-else />

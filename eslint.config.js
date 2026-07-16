@@ -16,7 +16,9 @@ export default [
       }
     },
     rules: {
-      'vue/multi-word-component-names': 'off'
+      'vue/multi-word-component-names': 'off',
+      // vuetify data-table slot names contain dots (e.g. #item.total)
+      'vue/valid-v-slot': ['error', { allowModifiers: true }]
     }
   }
 ]
